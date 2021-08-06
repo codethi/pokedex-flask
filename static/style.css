@@ -1,0 +1,22 @@
+@font-face {
+    font-family: Pokemon;
+    src: url('./font/Pokemon\ Solid.ttf');
+ }
+
+body ,html {
+    background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,0,0,1) 50%);
+    background-repeat: no-repeat;
+
+    height: 100%;
+    width: 100%;
+
+}
+
+
+h1 {
+    font-family: Pokemon, Arial;
+    color: #ffcc01;
+    -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: #3264b0; /* cor da borda */
+    font-size: 4rem;
+}
