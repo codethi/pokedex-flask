@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
+from config import uri_pg
 
 app = Flask(__name__)
 app.secret_key = 'pokedex'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://bgaxugia:0GNUb6kD1qNaQV1m-_jR6YsfsztVv4K6@kesavan.db.elephantsql.com/bgaxugia'
+app.config['SQLALCHEMY_DATABASE_URI'] = uri_pg
 db = SQLAlchemy(app)
 
 class Pokedex(db.Model):
