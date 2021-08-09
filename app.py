@@ -53,6 +53,12 @@ def edit(id):
       return redirect('/')
    return render_template('index.html', pokemon=pokemon, pokedex=pokedex) 
 
+@app.route('/<id>')
+def get_by_id(id):
+   pokemonDelete = Pokedex.query.get(id) 
+   pokedex = Pokedex.query.all()
+   return render_template('index.html', pokemonDelete=pokemonDelete, pokedex=pokedex)
+
 @app.route('/delete/<id>') 
 def delete(id):
    pokemon = Pokedex.query.get(id) 
