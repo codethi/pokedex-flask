@@ -68,7 +68,8 @@ def delete(id):
 
 @app.route('/filter', methods=['GET', 'POST']) 
 def filter():
-   pokedex = Pokedex.query.filter_by(tipo=request.form['search']).all()
+   tipo = request.form['search']
+   pokedex = Pokedex.query.filter(Pokedex.tipo.ilike(f'%{tipo}%')).all()
    return render_template('index.html', pokedex=pokedex)
 
 @app.route('/filter/<param>') 
